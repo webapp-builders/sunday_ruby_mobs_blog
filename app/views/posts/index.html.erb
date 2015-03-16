@@ -1,0 +1,16 @@
+<div>
+  <h1>This is Posts View in app/views/posts</h1>
+  <br />
+
+  <% @posts.each do |post| %>
+
+  <div id="post-<%= post.id %>">
+    <b><%= post.title %></b>
+    <%= post.body %>
+    <%= post.created_at %>
+    <%= link_to "go show", post_path(post) %>
+    <br /><br />
+  </div>
+
+  <% end %>
+</div>
