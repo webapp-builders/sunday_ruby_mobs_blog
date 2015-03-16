@@ -1,14 +1,13 @@
-require 'test_helper'
+require "test_helper"
 
 class PostsControllerTest < ActionController::TestCase
-  test "All Posts" do
+
+
+  def test_posts_index
     get :index
     assert_response :success
+    assert_not_nil assigns(:posts)
+    
+    assert_routing posts_path, controller: 'posts', action: 'index'  
   end
 end
-
-
-# :success to indicate 200-299, 
-# :redirect to indicate 300-399, 
-# :missing to indicate 404, or 
-# :error to match the 500-599 range
