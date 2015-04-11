@@ -3,10 +3,8 @@ require 'test_helper'
 class PostTest < ActiveSupport::TestCase
 
   test "Add Post" do
-    post = Post.new({
-      title: "Hello World",
-      body:  "Hello KangKyu, This is the world."
-    })
+    post = Post.new(title: "Hello World",
+                    body: "Hello KangKyu, This is the world.")
     assert_equal "Hello World", post.title
     assert_equal "Hello KangKyu, This is the world.", post.body
 
