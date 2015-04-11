@@ -3,7 +3,9 @@
 one:
   title: Post One
   body: MyText
+  user: one
 
 two:
   title: MyStringTwo
   body: MyText
+  user: one
