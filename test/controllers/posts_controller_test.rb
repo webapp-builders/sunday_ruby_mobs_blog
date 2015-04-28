@@ -20,8 +20,8 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "posts create" do
-    assert_difference 'Post.count', 1 do
-      post :create, "post"=>{"title"=>"Hello Sam","body"=>"Nice to see you!"}
+    assert_difference "Post.count", 1 do
+      post :create, "post" => { "title" => "Hello Sam", "body" => "Nice to see you!" }
     end
     assert_response :redirect
   end
