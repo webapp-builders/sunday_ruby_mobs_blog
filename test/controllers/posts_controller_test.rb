@@ -13,4 +13,16 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal assigns(:post), posts(:one)
   end
+
+  test "posts new" do
+    get :new
+    assert_response :success
+  end
+
+  test "posts create" do
+    assert_difference "Post.count", 1 do
+      post :create, "post" => { "title" => "Hello Sam", "body" => "Nice to see you!" }
+    end
+    assert_response :redirect
+  end
 end
