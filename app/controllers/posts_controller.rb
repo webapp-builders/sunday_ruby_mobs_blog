@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-    @post = Post.create(params.require(:post).permit(:title))
+    @post = Post.create(params.require(:post).permit(:title, :body))
     redirect_to post_path(@post)
   end
 end
